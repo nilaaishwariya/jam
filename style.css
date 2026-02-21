@@ -1,0 +1,123 @@
+:root {
+  --bg1: #0f2027;
+  --bg2: #203a43;
+  --bg3: #2c5364;
+  --primary: #00f5ff;
+  --accent: #ff00c8;
+  --card: rgba(255,255,255,0.05);
+  --text: white;
+}
+
+body.light {
+  --bg1: #f4f4f4;
+  --bg2: #ffffff;
+  --bg3: #e0e0e0;
+  --primary: #007bff;
+  --accent: #ff4081;
+  --card: white;
+  --text: black;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg,var(--bg1),var(--bg2),var(--bg3));
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+#bgCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.container {
+  max-width: 650px;
+  margin: 40px auto;
+  padding: 25px;
+  background: var(--card);
+  backdrop-filter: blur(15px);
+  border-radius: 15px;
+  box-shadow: 0 0 40px rgba(0,255,255,0.3);
+  animation: floatCard 4s ease-in-out infinite;
+}
+
+@keyframes floatCard {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+h1 {
+  text-align: center;
+  background: linear-gradient(90deg,#00f5ff,#ff00c8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+button {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  background: linear-gradient(45deg,#00f5ff,#ff00c8);
+  color: white;
+  transition: 0.3s;
+  margin-top: 10px;
+}
+
+button:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 20px rgba(255,0,200,0.6);
+}
+
+.hidden { display: none; }
+
+#answers button {
+  width: 100%;
+  margin: 8px 0;
+  animation: fadeInUp 0.4s ease forwards;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.progress-bar {
+  width: 100%;
+  height: 12px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 10px;
+  margin: 15px 0;
+}
+
+#progressBar {
+  height: 12px;
+  width: 0%;
+  border-radius: 10px;
+  background: linear-gradient(90deg,#00f5ff,#ff00c8);
+  transition: width 0.4s ease;
+}
+
+#timer {
+  font-weight: bold;
+  color: var(--primary);
+  text-shadow: 0 0 10px var(--primary);
+}
+
+input {
+  padding: 8px;
+  width: 100%;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: none;
+}
+
+@media (max-width:600px){
+  .container{margin:20px;}
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Symposium Tech Quiz</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<canvas id="bgCanvas"></canvas>
+
+<div class="container">
+  <header>
+    <h1>⚡ TECH SYMPOSIUM QUIZ</h1>
+    <button id="toggleTheme">Toggle Theme</button>
+  </header>
+
+  <!-- Category Selection -->
+  <div id="category-section">
+    <h2>Select Category</h2>
+    <select id="categorySelect"></select>
+    <button onclick="startQuiz()">Start Quiz</button>
+  </div>
+
+  <!-- Quiz Section -->
+  <div id="quiz-section" class="hidden">
+    <div class="quiz-header">
+      <span id="progressText"></span>
+      <span id="timer"></span>
+    </div>
+
+    <div class="progress-bar">
+      <div id="progressBar"></div>
+    </div>
+
+    <h2 id="question"></h2>
+    <div id="answers"></div>
+  </div>
+
+  <!-- Result Section -->
+  <div id="result-section" class="hidden">
+    <h2>🏆 Quiz Completed</h2>
+    <p id="scoreText"></p>
+    <input type="text" id="username" placeholder="Enter your team name">
+    <button onclick="saveScore()">Save Score</button>
+    <button onclick="restartQuiz()">Restart</button>
+
+    <h3>🔥 Leaderboard</h3>
+    <ul id="leaderboard"></ul>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
